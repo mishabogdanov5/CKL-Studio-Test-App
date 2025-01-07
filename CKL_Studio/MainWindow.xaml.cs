@@ -1,21 +1,9 @@
-﻿using System.Configuration;
-using System.Diagnostics;
-using System.Security;
-using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Xml;
 using CKLLib;
 using CKLDrawing;
-using Microsoft.VisualBasic;
 using Microsoft.Win32;
-using System.IO;
 using CKLLib.Operations;
 namespace WPFTraining
 {

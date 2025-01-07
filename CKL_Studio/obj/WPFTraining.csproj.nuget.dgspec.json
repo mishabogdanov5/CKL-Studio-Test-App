@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\79136\\source\\repos\\WPFTraining\\WPFTraining\\WPFTraining.csproj": {}
+    "C:\\Users\\79136\\source\\repos\\CKL_Studio_Test_Version\\CKL_Studio\\WPFTraining.csproj": {}
   },
   "projects": {
-    "C:\\Users\\79136\\source\\repos\\WPFTraining\\WPFTraining\\WPFTraining.csproj": {
+    "C:\\Users\\79136\\source\\repos\\CKL_Studio_Test_Version\\CKL_Studio\\WPFTraining.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\79136\\source\\repos\\WPFTraining\\WPFTraining\\WPFTraining.csproj",
+        "projectUniqueName": "C:\\Users\\79136\\source\\repos\\CKL_Studio_Test_Version\\CKL_Studio\\WPFTraining.csproj",
         "projectName": "WPFTraining",
-        "projectPath": "C:\\Users\\79136\\source\\repos\\WPFTraining\\WPFTraining\\WPFTraining.csproj",
+        "projectPath": "C:\\Users\\79136\\source\\repos\\CKL_Studio_Test_Version\\CKL_Studio\\WPFTraining.csproj",
         "packagesPath": "C:\\Users\\79136\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\79136\\source\\repos\\WPFTraining\\WPFTraining\\obj\\",
+        "outputPath": "C:\\Users\\79136\\source\\repos\\CKL_Studio_Test_Version\\CKL_Studio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
