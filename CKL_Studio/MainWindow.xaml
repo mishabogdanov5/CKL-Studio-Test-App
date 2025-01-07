@@ -1,0 +1,39 @@
+﻿<Window x:Class="WPFTraining.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFTraining"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel x:Name="Container" Background="SlateGray">
+            <StackPanel Orientation="Horizontal" x:Name="Operations" DockPanel.Dock="Top" Height="40" Margin="0,0,0,5">
+                <Button x:Name="BrowseButton" Content="Browse" Height="40" Click="BrowseButtonClick" Padding="3"/>
+                <Button x:Name="TimeTransformButton" Content="Time Transform" Height="40"  Padding="3"/>
+                <Button x:Name="LeftPrecedenceButton" Content="Left Precedence" Height="40" Click="OnCompositionButtonClick" Padding="3"/>
+                <Button x:Name="RightPrecedenceButton" Content="Right Precedence" Height="40" Click="OnCompositionButtonClick" Padding="3"/>
+                <Button x:Name="LeftContinuationButton" Content="Left Continuation" Height="40" Click="OnCompositionButtonClick" Padding="3"/>
+                <Button x:Name="RightContinuationButton" Content="Right Continuation" Height="40" Click="OnCompositionButtonClick" Padding="3"/>
+                <Button x:Name="UnionButton" Content="Union" Height="40"  Click="OnUnionClick" Padding="3"/>
+                <Button x:Name="IntersectButton" Content="Intersect" Height="40"  Click="OnIntersectClick" Padding="3"/>
+                <Button x:Name="DifferenceButton" Content="Difference" Height="40"  Click="OnDifferenceClick" Padding="3"/>
+                <Button x:Name="InversionButton" Content="Inversion" Height="40"  Click="OnInversionClick" Padding="3"/>
+                <Button x:Name="SemanticUnionButton" Content="SemanticUnion" Height="40"  Click="OnSemanticUnionClick" Padding="3"/>
+                <Button x:Name="SemanticIntersectButton" Content="SemanticIntersect" Height="40" Click="OnSemanticIntersectClick" Padding="3"/>
+                <Button x:Name="SemanticDifferenceButton" Content="SemanticDifference" Height="40" Click="OnSemanticDifferenceClick" Padding="3"/>
+                <Button x:Name="TranspositionButton" Content="Transposition" Height="40" Click="OnTranspositionButtonClick" Padding="3"/>
+                <Button x:Name="TruncateLowButton" Content="TruncateLow" Height="40"  Padding="3"/>
+                <Button x:Name="TruncateHighButton" Content="TruncateHigh" Height="40" Padding="3"/>
+                <Button x:Name="CompositionButton" Content="Composition" Height="40" Click="OnCompositionButtonClick" Padding="3"/>
+                <Button x:Name="SaveButton" Content="Save" Height="40" Click="OnSaveClick" Padding="3"/>
+            </StackPanel>
+            
+            <Label x:Name="FilePathLabel" Height="30" DockPanel.Dock="Top" Background="Black" Foreground="White" Margin="0,0,0,3" />
+            
+            <StackPanel x:Name="ScaleButtons" Orientation="Horizontal"  DockPanel.Dock="Bottom" Height="30" HorizontalAlignment="Center" Margin="0,10,0,5" VerticalAlignment="Bottom">
+                <Button x:Name="ScalePlus" Click="ScalePlus_Click" Content="Plus" Height="30" Width="150"/>
+                <Button x:Name="ScaleMinus" Click="ScaleMinus_Click" Content="Minus" Height="30" Width="150"/>
+            </StackPanel>
+
+        </DockPanel>
+</Window>
