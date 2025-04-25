@@ -1,0 +1,23 @@
+﻿<Window x:Class="WPFTraining.EntryTimeIntervalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFTraining"
+        mc:Ignorable="d"
+        Background="Gray"
+        Title="EntryTimeIntervalWindow" Height="300" Width="400">
+    <StackPanel x:Name="Panel" Orientation="Vertical">
+        <StackPanel x:Name="StartTimePanel" Orientation="Horizontal" Margin="40, 50, 0, 0">
+            <Label x:Name="StartTimeLabel" Content="Start Time: " Width="80"/>
+            <TextBox x:Name="StartTimeTextBox" Margin="30, 0, 50, 0" Width="200"/>
+        </StackPanel>
+
+        <StackPanel x:Name="EndTimePanel" Orientation="Horizontal" Margin="40, 50, 0, 0">
+            <Label x:Name="EndTimeLabel" Content="End Time: " Width="80"/>
+            <TextBox x:Name="EndTimeTextBox" Margin="30, 0, 50, 0" Width="200"/>
+        </StackPanel>
+
+        <Button x:Name="ConfirmButton" Content="Confirm" Background="SkyBlue" Margin="100, 50, 100, 0" Click="ConfirmButton_Click"/>
+    </StackPanel>
+</Window>

@@ -9,11 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Costura.Fody" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="CKLDrawing">
-      <HintPath>..\..\Projects\CKL_Studio\CKL_Library\CKL\CKLDrawing\bin\Debug\net8.0-windows\CKLDrawing.dll</HintPath>
+      <HintPath>..\..\Projects\CKL_Studio\CKL_Library\CKL\CKLDrawing\bin\Release\net8.0-windows\CKLDrawing.dll</HintPath>
     </Reference>
     <Reference Include="CKLLib">
-      <HintPath>..\..\Projects\CKL_Studio\CKL_Library\CKL\CKLLib\bin\Debug\net8.0\CKLLib.dll</HintPath>
+      <HintPath>..\..\Projects\CKL_Studio\CKL_Library\CKL\CKLLib\bin\Release\net8.0\CKLLib.dll</HintPath>
     </Reference>
   </ItemGroup>
 

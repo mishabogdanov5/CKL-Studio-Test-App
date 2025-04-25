@@ -9,11 +9,11 @@
     <DockPanel x:Name="Container" Background="SlateGray">
             <StackPanel Orientation="Horizontal" x:Name="Operations" DockPanel.Dock="Top" Height="40" Margin="0,0,0,5">
                 <Button x:Name="BrowseButton" Content="Browse" Height="40" Click="BrowseButtonClick" Padding="3"/>
-                <Button x:Name="TimeTransformButton" Content="Time Transform" Height="40"  Padding="3"/>
-                <Button x:Name="LeftPrecedenceButton" Content="Left Precedence" Height="40" Click="OnCompositionButtonClick" Padding="3"/>
-                <Button x:Name="RightPrecedenceButton" Content="Right Precedence" Height="40" Click="OnCompositionButtonClick" Padding="3"/>
-                <Button x:Name="LeftContinuationButton" Content="Left Continuation" Height="40" Click="OnCompositionButtonClick" Padding="3"/>
-                <Button x:Name="RightContinuationButton" Content="Right Continuation" Height="40" Click="OnCompositionButtonClick" Padding="3"/>
+                <Button x:Name="TimeTransformButton" Content="Time Transform" Height="40"  Padding="3" Click="TimeTransformButtonClick"/>
+                <Button x:Name="LeftPrecedenceButton" Content="Left Precedence" Height="40" Click="LeftPrecedenceButtonClick" Padding="3"/>
+                <Button x:Name="RightPrecedenceButton" Content="Right Precedence" Height="40" Click="RightPrecedenceButtonClick" Padding="3"/>
+                <Button x:Name="LeftContinuationButton" Content="Left Continuation" Height="40" Click="LeftContinuationButtonClick" Padding="3"/>
+                <Button x:Name="RightContinuationButton" Content="Right Continuation" Height="40" Click="RightContinuationButtonClick" Padding="3"/>
                 <Button x:Name="UnionButton" Content="Union" Height="40"  Click="OnUnionClick" Padding="3"/>
                 <Button x:Name="IntersectButton" Content="Intersect" Height="40"  Click="OnIntersectClick" Padding="3"/>
                 <Button x:Name="DifferenceButton" Content="Difference" Height="40"  Click="OnDifferenceClick" Padding="3"/>
@@ -25,6 +25,7 @@
                 <Button x:Name="TruncateLowButton" Content="TruncateLow" Height="40"  Padding="3"/>
                 <Button x:Name="TruncateHighButton" Content="TruncateHigh" Height="40" Padding="3"/>
                 <Button x:Name="CompositionButton" Content="Composition" Height="40" Click="OnCompositionButtonClick" Padding="3"/>
+                <Button x:Name="ItemProjectionButton" Content="ItemProjection" Height="40" Click="ItemProjectionButtonClick" Padding="3"/>
                 <Button x:Name="SaveButton" Content="Save" Height="40" Click="OnSaveClick" Padding="3"/>
             </StackPanel>
             

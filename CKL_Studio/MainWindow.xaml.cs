@@ -5,6 +5,8 @@ using CKLLib;
 using CKLDrawing;
 using Microsoft.Win32;
 using CKLLib.Operations;
+using System.Reflection;
+using System.Transactions;
 namespace WPFTraining
 {
 	public partial class MainWindow : Window
@@ -280,7 +282,121 @@ namespace WPFTraining
 			}
 		}
 
-        private void OnSaveClick(object sender, RoutedEventArgs e) 
+
+		private void TimeTransormAction(TimeInterval interval) 
+		{
+			try
+			{
+				ResetCkl(CKLMath.TimeTransform(_view.Ckl, interval));
+			}
+			catch (ArgumentException ex)
+			{
+				MessageBox.Show($"Uncorrect data: {ex.Message}");
+			}
+		}
+
+		private void TimeTransformButtonClick(object sender, RoutedEventArgs e)
+		{ 
+			ChangeOperationsButtonsColors((Button)sender);
+			new EntryTimeIntervalWindow(TimeTransormAction).ShowDialog();
+		}
+
+		private void LeftPrecedenceAction(TimeInterval interval, double delta) 
+		{
+			try
+			{
+				ResetCkl(CKLMath.LeftPrecedence(_view.Ckl, interval, delta));
+			}
+			catch (ArgumentException ex)
+			{
+				MessageBox.Show($"Uncorrect data: {ex.Message}");
+			}
+		}
+
+		private void RightPrecedenceAction(TimeInterval interval, double delta) 
+		{
+			try
+			{
+				ResetCkl(CKLMath.RightPrecedence(_view.Ckl, interval, delta));
+			}
+			catch (ArgumentException ex)
+			{
+				MessageBox.Show($"Uncorrect data: {ex.Message}");
+			}
+		}
+
+		private void LeftContinuationAction(TimeInterval interval, double delta) 
+		{
+			try
+			{
+				ResetCkl(CKLMath.LeftContinuation(_view.Ckl, interval, delta));
+			}
+			catch (ArgumentException ex)
+			{
+				MessageBox.Show($"Uncorrect data: {ex.Message}");
+			}
+		}
+		private void RightContinuationAction(TimeInterval interval, double delta)
+		{
+			try
+			{
+				ResetCkl(CKLMath.RightContinuation(_view.Ckl, interval, delta));
+			}
+			catch (ArgumentException ex) 
+			{
+				MessageBox.Show($"Uncorrect data: {ex.Message}"); 
+			} 
+		}
+
+		private void ItemProjectionAction(List<object> objs, TimeInterval interval) 
+		{
+			Func<object, object, bool> comp = (obj1, obj2) => obj1.ToString().Equals(obj2.ToString());
+			//try
+			//{
+			if (objs.Count <= 1)
+				ResetCkl(CKLMath.ItemProjection(_view.Ckl, objs.FirstOrDefault(), comp, interval));
+			else 
+			{
+				CKL ckl = CKLMath.ItemProjection(_view.Ckl, objs.FirstOrDefault(), comp, interval);
+				CKLView view = new CKLView(ckl);
+				ResetCkl(CKLMath.ItemProjection(_view.Ckl, objs, comp, interval));
+				
+			}
+			//}
+
+			/*catch (Exception ex) 
+			{
+				MessageBox.Show($"Uncorrect data: {ex.Message}");
+			}*/
+		}
+
+		private void LeftPrecedenceButtonClick(object sender, RoutedEventArgs e) 
+		{
+			ChangeOperationsButtonsColors((Button)sender);
+			new EntryTimeIntervalWindow(LeftPrecedenceAction).ShowDialog();
+		}
+		private void RightPrecedenceButtonClick(object sender, RoutedEventArgs e)
+		{
+			ChangeOperationsButtonsColors((Button)sender);
+			new EntryTimeIntervalWindow(RightPrecedenceAction).ShowDialog();
+		}
+		private void LeftContinuationButtonClick(object sender, RoutedEventArgs e)
+		{
+			ChangeOperationsButtonsColors((Button)sender);
+			new EntryTimeIntervalWindow(LeftContinuationAction).ShowDialog();
+		}
+		private void RightContinuationButtonClick(object sender, RoutedEventArgs e)
+		{
+			ChangeOperationsButtonsColors((Button)sender);
+			new EntryTimeIntervalWindow(RightContinuationAction).ShowDialog();
+		}
+
+		private void ItemProjectionButtonClick(object sender, RoutedEventArgs e) 
+		{
+			ChangeOperationsButtonsColors((Button)sender);
+			new EntryTimeIntervalWindow(ItemProjectionAction).ShowDialog();
+		} 
+		private void OnSaveClick(object sender, RoutedEventArgs e) 
         {
             try
             {

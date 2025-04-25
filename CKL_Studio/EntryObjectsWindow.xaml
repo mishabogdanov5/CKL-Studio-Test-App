@@ -1,0 +1,17 @@
+﻿<Window x:Class="WPFTraining.EntryObjectsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFTraining"
+        mc:Ignorable="d"
+        Background="Gray"
+        Title="EntryObjectsWindow" Height="300" Width="400">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal" Margin="50,80,0,0" Height="50">
+            <Label Margin="0,0,100,0" VerticalAlignment="Center">Objects</Label>
+            <TextBox x:Name="ObjectsTextBox" VerticalAlignment="Center" Background="White" Width ="150" Margin="0,0,50,0"></TextBox>
+        </StackPanel>
+        <Button x:Name="EntryButton" Margin = "0,100,0,0" HorizontalAlignment="Center" Content="Ввести" Click="EntryButton_Click" />
+    </StackPanel>
+</Window>

@@ -1,1 +1,61 @@
-\.vs
+## Игнорировать файлы сборки и настройки проекта
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+*.cache
+*.docstates
+_ReSharper.*
+*.resharper
+[Tt]humbs.db
+*.vs
+.vs/
+*.swp
+*~
+
+## Игнорировать файлы пакетов NuGet
+packages/
+[Nn]u[Gg]et.exe
+*.nupkg
+*.nuspec
+
+## Игнорировать файлы резервных копий и временные файлы
+*.bak
+*.tmp
+*.log
+
+## Игнорировать выходные файлы MSBuild
+*.msi
+*.cache
+*.pdb
+*.idb
+
+## Игнорировать пользовательские настройки Visual Studio
+.vs/
+*.userprefs
+*.userosscache
+
+## Игнорировать результаты тестирования
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+## Игнорировать файлы Azure
+*.azurePubxml
+
+## Игнорировать файлы Rider
+.idea/
+
+## Игнорировать файлы манифеста ClickOnce
+*.application
+*.manifest
+*.deploy
+
+## Игнорировать файлы SQL Server
+*.mdf
+*.ldf
+
+## Игнорировать локальные настройки
+appsettings.local.json
+appsettings.Development.json
