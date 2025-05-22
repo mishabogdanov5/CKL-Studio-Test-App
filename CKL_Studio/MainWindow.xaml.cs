@@ -7,6 +7,7 @@ using Microsoft.Win32;
 using CKLLib.Operations;
 using System.Reflection;
 using System.Transactions;
+using System.Windows.Input;
 namespace WPFTraining
 {
 	public partial class MainWindow : Window
@@ -18,23 +19,47 @@ namespace WPFTraining
 
 			CKL ckl = new CKL();
 
-			
+
 			_view = new CKLView(ckl);
 
 			Container.Children.Add(_view);
 
-			_operationsButtons = new Button[] { TimeTransformButton, UnionButton, IntersectButton, DifferenceButton, 
-			SemanticUnionButton, SemanticIntersectButton, SemanticDifferenceButton, TranspositionButton, 
+			_operationsButtons = new Button[] { TimeTransformButton, UnionButton, IntersectButton, DifferenceButton,
+			SemanticUnionButton, SemanticIntersectButton, SemanticDifferenceButton, TranspositionButton,
 				TruncateLowButton, TruncateHighButton, CompositionButton};
 
+			AddBindings(_view);
 		}
 
+
+		private void AddBindings(CKLView cklView)
+		{
+			foreach (Chain chain in cklView.Chains)
+			{
+				foreach (Interval interval in chain.Intervals)
+				{
+					interval.PreviewMouseDown += (object sender, MouseButtonEventArgs e) =>
+					{
+						if (e.ChangedButton == MouseButton.Right && interval.IsActive)
+						{
+							new EntryTimeIntervalWindow((TimeInterval timeInterval) => { 
+								cklView.ChangeInterval(interval, timeInterval);
+								AddBindings(cklView);
+							}).ShowDialog();
+						}
+					};
+				}
+			}
+		}
+								
 		private void ResetCkl(CKL ckl)
 		{
 			Container.Children.Remove(_view);
 			_view = new CKLView(ckl);
 			Container.Children.Add(_view);
 			FilePathLabel.Content = ckl.FilePath;
+
+			AddBindings(_view);
 		}
 
 		private Button[] _operationsButtons;
