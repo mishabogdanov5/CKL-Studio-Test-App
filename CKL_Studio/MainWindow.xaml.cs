@@ -5,8 +5,6 @@ using CKLLib;
 using CKLDrawing;
 using Microsoft.Win32;
 using CKLLib.Operations;
-using System.Reflection;
-using System.Transactions;
 using System.Windows.Input;
 namespace WPFTraining
 {
@@ -31,19 +29,33 @@ namespace WPFTraining
 			AddBindings(_view);
 		}
 
+		private void F(CKLView view, EmptyInterval interval, TimeInterval timeInterval) 
+		{
+			Chain c = interval.Parent;
+			RelationItem r = c.Item;
+			try 
+			{
+				view.ChangeEmptyInterval(interval, timeInterval);
+			} 
+			catch 
+			{
+				MessageBox.Show(string.Join(',', r.Intervals));
+			}
+		}
 
 		private void AddBindings(CKLView cklView)
 		{
 			foreach (Chain chain in cklView.Chains)
 			{
-				foreach (Interval interval in chain.Intervals)
+				foreach (Button interval in chain.AllIntervals)
 				{
 					interval.PreviewMouseDown += (object sender, MouseButtonEventArgs e) =>
 					{
-						if (e.ChangedButton == MouseButton.Right && interval.IsActive)
+						if (e.ChangedButton == MouseButton.Right)
 						{
-							new EntryTimeIntervalWindow((TimeInterval timeInterval) => { 
-								cklView.ChangeInterval(interval, timeInterval);
+							new EntryTimeIntervalWindow((TimeInterval timeInterval) => {
+								if (interval is Interval) cklView.ChangeInterval((Interval) interval, timeInterval);
+								else cklView.ChangeEmptyInterval((EmptyInterval) interval, timeInterval);
 								AddBindings(cklView);
 							}).ShowDialog();
 						}
